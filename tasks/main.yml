@@ -1,0 +1,23 @@
+---
+- name: Include {{ ansible_os_family }} varialbe
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: Installing chrony package
+  package:
+    name: chrony
+
+- name: Set timezone
+  timezone:
+    name: "{{ chrony_timezone }}"
+
+- name: Start and enable chrony daemon
+  service:
+    name: "{{ chrony_service_name }}"
+    state: started
+    enabled: true
+
+- name: Configure chrony
+  template:
+    src: chrony.conf.j2
+    dest: "{{ chrony_config_path }}"
+  notify: restart chrony

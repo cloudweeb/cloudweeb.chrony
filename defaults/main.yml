@@ -1,0 +1,9 @@
+---
+chrony_timezone: Asia/Jakarta
+
+chrony_area: asia
+chrony_servers:
+  - "0{{ '.' + chrony_area if chrony_area else '' }}.pool.chrony.org iburst"
+  - "1{{ '.' + chrony_area if chrony_area else '' }}.pool.chrony.org iburst"
+  - "2{{ '.' + chrony_area if chrony_area else '' }}.pool.chrony.org iburst"
+  - "3{{ '.' + chrony_area if chrony_area else '' }}.pool.chrony.org iburst"
