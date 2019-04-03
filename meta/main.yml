@@ -1,12 +1,13 @@
 ---
 galaxy_info:
+  role_name: chrony
   author: Agnesius Santo Naibaho
-  description: Install dan setting chrony
+  description: Install and setting chrony
   company: Cloudweeb
 
   license: MIT
 
-  min_ansible_version: 2.4
+  min_ansible_version: 2.7
 
   platforms:
     - name: Debian
@@ -16,6 +17,9 @@ galaxy_info:
       versions:
         - 7
 
-  galaxy_tags: []
+  galaxy_tags:
+    - chrony
+    - system
+    - ntp
 
 dependencies: []
